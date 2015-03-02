@@ -71,4 +71,20 @@ describe('modification', function () {
 
     assume(fixture.foo).equals('mom');
   });
+
+  it('can be triggered without suffix', function (next) {
+    Fixture.prototype.change = modification();
+    var fixture = new Fixture();
+
+    fixture.once('foo', function (currently, previously) {
+      assume(fixture.foo).equals('hi');
+      assume(fixture.foo).equals(currently);
+      assume(previously).equals('bar');
+
+      next();
+    });
+
+    assume(fixture.foo).equals('bar');
+    fixture.change({ foo: 'hi' });
+  });
 });

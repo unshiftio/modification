@@ -9,7 +9,7 @@
  * @api public
  */
 module.exports = function modification(suffix) {
-  suffix = suffix || ' change';
+  suffix = arguments.length ? suffix : '';
 
   /**
    * Changes processor.
