@@ -1,6 +1,6 @@
 {
   "name": "modification",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Process changes that should be made on the prototype and emit `change` event for each changed property",
   "main": "index.js",
   "scripts": {
